@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Product from "./components/Product";
+import { MdClose, MdDelete, MdEdit } from "react-icons/md";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { BsFillCartPlusFill } from "react-icons/bs";
+
 
 const products = [
   {
@@ -79,13 +83,14 @@ const products = [
 ];
 
 export default function App() {
-  const [keyword, setKeyword] = useState("");
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(Infinity);
   const [sortBy, setSortBy] = useState("id");
   const [sortOrder, setSortOrder] = useState("asc");
   const [page, setPage] = useState(1);
   const [editedId, setEditedId] = useState();
+  const [keyword, setKeyword] = useState("");
+ 
 
 
   const filteredSortedProducts = products
